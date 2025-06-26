@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -55,30 +56,45 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20 relative overflow-hidden font-['NeueMontreal']">
+      {/* Animated background elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/10 rounded-full blur-3xl"></div>
       {/* Projects Header */}
+      
       <div className="container mx-auto px-6 mb-16">
-        <h1 className="text-5xl font-bold mb-6">Our Projects</h1>
-        <p className="text-xl text-gray-400 max-w-3xl">Explore our portfolio of innovative additive manufacturing solutions across various industries.</p>
+      <div className="inline-block mb-4">
+          <div className="flex items-center space-x-2 bg-dark-200 rounded-full py-1 px-3 mb-4 w-fit">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-sm font-medium font-['NeueMontreal']">Project Showcase</span>
+          </div>
+        </div>
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal drop-shadow-xl tracking-tight leading-tight">
+          Our <span className='bg-clip-text text-transparent bg-gradient-red'> Projects</span> 
+          <div className="absolute -bottom-3 left-0 w-20 h-1 bg-primary"></div>
+        </h1>
+        
+        <p className="text-xl text-gray-400 max-w-3xl font-['NeueMontreal']">Explore our portfolio of innovative additive manufacturing solutions across various industries.</p>
       </div>
-
       {/* Project Filters - In a real app, these would filter the projects */}
       <div className="container mx-auto px-6 mb-12">
         <div className="flex flex-wrap gap-4 justify-center">
-          <button className="bg-primary px-6 py-2 rounded-full text-white font-medium">All Projects</button>
-          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition duration-300">Aerospace</button>
-          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition duration-300">Healthcare</button>
-          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition duration-300">Automotive</button>
-          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition duration-300">Manufacturing</button>
-          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition duration-300">Architecture</button>
+          <button className="bg-primary px-6 py-2 rounded-full text-white font-medium relative overflow-hidden group font-['NeueMontreal']">
+            <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
+            <span className="relative">All Projects</span>
+          </button>
+          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">Aerospace</button>
+          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">Healthcare</button>
+          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">Automotive</button>
+          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">Manufacturing</button>
+          <button className="bg-background hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">Architecture</button>
         </div>
       </div>
-
       {/* Projects Grid */}
       <div className="container mx-auto px-6 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="group bg-background rounded-lg overflow-hidden">
+            <div key={project.id} className="group bg-background/90 rounded-3xl overflow-hidden shadow-2xl border border-dark-100 hover:shadow-primary/20 transition-all duration-500 animate-fade-in-up">
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -87,35 +103,33 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 translate-y-6 group-hover:translate-y-0 transition duration-300">
-                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3">{project.category}</span>
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3 font-['NeueMontreal']">{project.category}</span>
+                  <h3 className="text-xl font-bold text-white font-['MonumentExtended']">{project.title}</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-400 mb-4">{project.description}</p>
+                <p className="text-gray-400 mb-4 font-['NeueMontreal']">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, index) => (
-                    <span key={index} className="text-xs bg-black/30 text-gray-300 px-3 py-1 rounded-full">{tag}</span>
+                    <span key={index} className="text-xs bg-black/30 text-gray-300 px-3 py-1 rounded-full font-['NeueMontreal']">{tag}</span>
                   ))}
                 </div>
-                <button className="text-primary font-medium hover:text-white transition duration-300">View Project Details →</button>
+                <button className="text-primary font-medium hover:text-white transition duration-300 font-['MonumentExtended']">View Project Details →</button>
               </div>
             </div>
           ))}
         </div>
       </div>
-
       {/* Case Studies Section */}
-      <div className="bg-background py-20 mb-20">
+      <div className="bg-background/90 py-20 mb-20 rounded-3xl shadow-2xl border border-dark-100 animate-fade-in-up">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Featured Case Studies</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Dive deeper into some of our most impactful projects and discover the transformative power of additive manufacturing.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 font-['MonumentExtended']">Featured Case Studies</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-['NeueMontreal']">Dive deeper into some of our most impactful projects and discover the transformative power of additive manufacturing.</p>
           </div>
-          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Case Study 1 */}
-            <div className="bg-black rounded-lg overflow-hidden">
+            <div className="bg-black/90 rounded-3xl overflow-hidden shadow-xl border border-dark-100 animate-fade-in-up">
               <div className="relative h-80">
                 <img 
                   src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
@@ -124,28 +138,27 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3">Case Study</span>
-                  <h3 className="text-2xl font-bold text-white">Revolutionizing Aerospace Manufacturing</h3>
+                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3 font-['NeueMontreal']">Case Study</span>
+                  <h3 className="text-2xl font-bold text-white font-['MonumentExtended']">Revolutionizing Aerospace Manufacturing</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-400 mb-6">How we helped a leading aerospace company reduce component weight by 30% while improving performance and reducing assembly time by 60%.</p>
+                <p className="text-gray-400 mb-6 font-['NeueMontreal']">How we helped a leading aerospace company reduce component weight by 30% while improving performance and reducing assembly time by 60%.</p>
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-primary font-medium">Results:</p>
-                    <ul className="text-gray-400 list-disc list-inside">
+                    <p className="text-primary font-medium font-['NeueMontreal']">Results:</p>
+                    <ul className="text-gray-400 list-disc list-inside font-['NeueMontreal']">
                       <li>30% weight reduction</li>
                       <li>60% faster assembly</li>
                       <li>$2.4M annual savings</li>
                     </ul>
                   </div>
-                  <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-md transition duration-300">Read Case Study</button>
+                  <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-xl transition duration-300 font-['MonumentExtended']">Read Case Study</button>
                 </div>
               </div>
             </div>
-            
             {/* Case Study 2 */}
-            <div className="bg-black rounded-lg overflow-hidden">
+            <div className="bg-black/90 rounded-3xl overflow-hidden shadow-xl border border-dark-100 animate-fade-in-up">
               <div className="relative h-80">
                 <img 
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
@@ -154,39 +167,37 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3">Case Study</span>
-                  <h3 className="text-2xl font-bold text-white">Accelerating Medical Innovation</h3>
+                  <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-3 font-['NeueMontreal']">Case Study</span>
+                  <h3 className="text-2xl font-bold text-white font-['MonumentExtended']">Accelerating Medical Innovation</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-400 mb-6">How our rapid prototyping services helped a medical device startup bring their innovative product to market 6 months ahead of schedule.</p>
+                <p className="text-gray-400 mb-6 font-['NeueMontreal']">How our rapid prototyping services helped a medical device startup bring their innovative product to market 6 months ahead of schedule.</p>
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-primary font-medium">Results:</p>
-                    <ul className="text-gray-400 list-disc list-inside">
+                    <p className="text-primary font-medium font-['NeueMontreal']">Results:</p>
+                    <ul className="text-gray-400 list-disc list-inside font-['NeueMontreal']">
                       <li>15 design iterations in 8 weeks</li>
                       <li>6 months faster to market</li>
                       <li>510(k) FDA approval on first submission</li>
                     </ul>
                   </div>
-                  <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-md transition duration-300">Read Case Study</button>
+                  <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-xl transition duration-300 font-['MonumentExtended']">Read Case Study</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       {/* Testimonials */}
       <div className="container mx-auto px-6 mb-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">Hear what our clients have to say about working with Galactic 3D.</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 font-['MonumentExtended']">Client Testimonials</h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-['NeueMontreal']">Hear what our clients have to say about working with Galactic 3D.</p>
         </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Testimonial 1 */}
-          <div className="testimonial-card bg-dark-300 p-8 rounded-lg border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2">
+          <div className="testimonial-card bg-dark-300 p-8 rounded-3xl border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
                 <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -194,35 +205,14 @@ export default function Projects() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Sarah Johnson</h3>
-                <p className="text-gray-400">CTO, AeroTech Innovations</p>
+                <h3 className="text-xl font-bold font-['MonumentExtended']">Sarah Johnson</h3>
+                <p className="text-gray-400 font-['NeueMontreal']">CTO, AeroTech Innovations</p>
               </div>
             </div>
-            <p className="text-gray-400 mb-6">"Galactic 3D's expertise in metal additive manufacturing helped us completely reimagine our component design. The weight savings and performance improvements exceeded our expectations."</p>
-            <div className="flex text-primary">
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            </div>
+            <p className="text-gray-300 font-['NeueMontreal']">“Galactic 3D’s expertise in additive manufacturing helped us achieve results we never thought possible. Their team is responsive, innovative, and a pleasure to work with.”</p>
           </div>
-          
           {/* Testimonial 2 */}
-          <div className="testimonial-card bg-dark-300 p-8 rounded-lg border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2">
+          <div className="testimonial-card bg-dark-300 p-8 rounded-3xl border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
                 <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -230,32 +220,14 @@ export default function Projects() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Michael Chen</h3>
-                <p className="text-gray-400">Product Manager, MediTech Solutions</p>
+                <h3 className="text-xl font-bold font-['MonumentExtended']">Michael Chen</h3>
+                <p className="text-gray-400 font-['NeueMontreal']">Product Manager, MediTech Solutions</p>
               </div>
             </div>
-            <p className="text-gray-400 mb-6">"The rapid prototyping capabilities at Galactic 3D were instrumental in our product development process. Their team's expertise helped us refine our design quickly and efficiently."</p>
-            <div className="flex text-primary">
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            </div>
+            <p className="text-gray-300 font-['NeueMontreal']">“The rapid prototyping capabilities at Galactic 3D were instrumental in our product development process. Their team's expertise helped us refine our design quickly and efficiently.”</p>
           </div>
-          
           {/* Testimonial 3 */}
-          <div className="testimonial-card bg-dark-300 p-8 rounded-lg border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2">
+          <div className="testimonial-card bg-dark-300 p-8 rounded-3xl border border-dark-100 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
                 <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -263,32 +235,14 @@ export default function Projects() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold">David Rodriguez</h3>
-                <p className="text-gray-400">Design Director, AutoInnovate</p>
+                <h3 className="text-xl font-bold font-['MonumentExtended']">David Rodriguez</h3>
+                <p className="text-gray-400 font-['NeueMontreal']">Design Director, AutoInnovate</p>
               </div>
             </div>
-            <p className="text-gray-400 mb-6">"The quality and precision of Galactic 3D's work is unmatched. Their ability to translate our complex designs into functional parts while maintaining aesthetic appeal was impressive."</p>
-            <div className="flex text-primary">
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg className="w-5 h-5 star transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            </div>
+            <p className="text-gray-300 font-['NeueMontreal']">“The quality and precision of Galactic 3D's work is unmatched. Their ability to translate our complex designs into functional parts while maintaining aesthetic appeal was impressive.”</p>
           </div>
         </div>
       </div>
-
       {/* CTA Section with animated background */}
       <div className="bg-primary py-16 relative overflow-hidden">
         {/* Animated background elements */}
@@ -323,6 +277,13 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <style jsx global>{`
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up { animation: fade-in-up 1s both; }
+      `}</style>
     </div>
   );
 }

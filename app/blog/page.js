@@ -123,7 +123,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20 relative overflow-hidden font-['NeueMontreal']">
       {/* Animated background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/10 rounded-full blur-3xl"></div>
@@ -133,20 +133,20 @@ export default function Blog() {
         <div className="inline-block mb-4">
           <div className="flex items-center space-x-2 bg-dark-200 rounded-full py-1 px-3 mb-4 w-fit">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm font-medium">Latest Insights</span>
+            <span className="text-sm font-medium font-['NeueMontreal']">Latest Insights</span>
           </div>
         </div>
-        <h1 className="text-5xl font-bold mb-6 relative">
-          <span className="bg-clip-text text-transparent bg-gradient-metal">Galactic 3D</span> 
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal drop-shadow-xl tracking-tight leading-tight">
+          <span className="bg-clip-text text-transparent bg-gradient-metal">Galactic 3D</span>
           <span className="bg-clip-text text-transparent bg-gradient-red ml-3">Blog</span>
           <div className="absolute -bottom-3 left-0 w-20 h-1 bg-primary"></div>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl">Insights, innovations, and industry trends in additive manufacturing and 3D printing technology.</p>
+        <p className="text-xl text-gray-400 max-w-3xl font-['NeueMontreal']">Insights, innovations, and industry trends in additive manufacturing and 3D printing technology.</p>
       </div>
 
       {/* Featured Article with enhanced styling */}
       <div className="container mx-auto px-6 mb-20">
-        <div className="bg-dark-400 rounded-xl overflow-hidden border border-dark-100 shadow-lg shadow-primary/5 hover:shadow-primary/20 transition-all duration-500">
+        <div className="bg-dark-400/90 rounded-3xl overflow-hidden border border-dark-100 shadow-2xl shadow-primary/5 hover:shadow-primary/20 transition-all duration-500 animate-fade-in-up">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative h-96 lg:h-auto overflow-hidden">
               <img 
@@ -154,13 +154,13 @@ export default function Blog() {
                 alt={featuredPost.title} 
                 className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-10"></div>
             </div>
-            <div className="p-8 lg:p-12 flex flex-col justify-center relative">
-              <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-4 transform hover:scale-105 transition-all duration-300">{featuredPost.category}</span>
-              <h2 className="text-3xl font-bold mb-4 hover:text-primary transition-all duration-300">{featuredPost.title}</h2>
-              <p className="text-gray-400 text-lg mb-6">{featuredPost.excerpt}</p>
+            <div className="p-8 lg:p-12 flex flex-col justify-center relative z-20">
+              <span className="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mb-4 transform hover:scale-105 transition-all duration-300 font-['NeueMontreal']">{featuredPost.category}</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 hover:text-primary transition-all duration-300 font-['MonumentExtended']">{featuredPost.title}</h2>
+              <p className="text-gray-400 text-lg mb-6 font-['NeueMontreal']">{featuredPost.excerpt}</p>
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
                   <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -168,11 +168,11 @@ export default function Blog() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium">{featuredPost.author}</p>
-                  <p className="text-gray-500 text-sm">{featuredPost.date} · {featuredPost.readTime}</p>
+                  <p className="font-medium font-['NeueMontreal']">{featuredPost.author}</p>
+                  <p className="text-gray-500 text-sm font-['NeueMontreal']">{featuredPost.date} · {featuredPost.readTime}</p>
                 </div>
               </div>
-              <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-md transition-all duration-300 self-start relative overflow-hidden group">
+              <button className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 self-start relative overflow-hidden group text-lg font-['MonumentExtended'] focus:ring-4 focus:ring-primary/40 focus:outline-none active:scale-95 hover:shadow-primary/40">
                 <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
                 <span className="relative flex items-center">
                   Read Full Article
@@ -189,23 +189,23 @@ export default function Blog() {
       {/* Category Filters with enhanced styling */}
       <div className="container mx-auto px-6 mb-12">
         <div className="flex flex-wrap gap-4 justify-center">
-          <button className="bg-primary px-6 py-2 rounded-full text-white font-medium relative overflow-hidden group">
+          <button className="bg-primary px-6 py-2 rounded-full text-white font-medium relative overflow-hidden group font-['NeueMontreal']">
             <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
             <span className="relative">All Posts</span>
           </button>
-          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50">
+          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">
             Industry Insights
           </button>
-          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50">
+          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">
             Technology
           </button>
-          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50">
+          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">
             Design
           </button>
-          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50">
+          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">
             Healthcare
           </button>
-          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50">
+          <button className="bg-dark-300 hover:bg-primary/20 px-6 py-2 rounded-full text-white font-medium transition-all duration-300 border border-dark-100 hover:border-primary/50 font-['NeueMontreal']">
             Sustainability
           </button>
         </div>
@@ -436,6 +436,13 @@ export default function Blog() {
           </div>
         </div>
       </div>
+      <style jsx global>{`
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up { animation: fade-in-up 1s both; }
+      `}</style>
     </div>
   );
 }

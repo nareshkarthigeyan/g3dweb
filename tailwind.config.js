@@ -7,9 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'new': ['new', 'sans-serif'],
-      },
+      // fontFamily: {
+      //   'new': ['new', 'sans-serif'],
+      // },
       colors: {
         'background': '#0f0f0f',
         'primary': '#ff3131', // Bright red

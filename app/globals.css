@@ -9,8 +9,23 @@
 }
 
 @font-face {
-    font-family: 'new';
+  font-family: 'test';
+  src: url('/fonts/macj.otf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeueMontreal';
     src: url('/fonts/NeueMontreal-Regular.otf');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('/fonts/MonumentExtended-Regular.otf');
+    font-weight: 700;
+    font-display: swap;
 }
 
 * {
@@ -27,7 +42,8 @@ body {
     rgb(var(--background-end-rgb))
   );
   min-height: 100vh;
-  font-family: 'new', sans-serif;
+  /* font-family: 'NeueMontreal', 'new', sans-serif; */
+   /* font-family: 'MonumentExtended', 'new', sans-serif;  */
   overflow-x: hidden;
 }
 
@@ -47,11 +63,15 @@ p {
   padding: 0;
 }
 
+h1, h2, h3, .heading-1, .heading-2, .heading-3 {
+  font-family: 'MonumentExtended', 'NeueMontreal', 'new', sans-serif;
+  letter-spacing: -0.02em;
+}
+
 h1 {
     color: #fff;
     font-size: 7rem;
     font-weight: 400;
-    letter-spacing: -0.2rem;
     line-height: 1;
 }
 

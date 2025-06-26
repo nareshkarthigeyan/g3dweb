@@ -3,14 +3,27 @@
     src: url('/fonts/NeueMontreal-Regular.otf');
 }
 
-nav {
-    position: fixed;
-    width: 100vw;
-    padding: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('/fonts/MonumentExtended-Regular.otf');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NeueMontreal';
+    src: url('/fonts/NeueMontreal-Regular.otf');
+    font-weight: 400;
+    font-display: swap;
+}
+
+.font-monumentExtended {
+  font-family: 'MonumentExtended', 'NeueMontreal', 'new', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.font-neueMontreal {
+  font-family: 'NeueMontreal', 'new', sans-serif !important;
+  font-weight: 400;
 }
 
 .logo a {
@@ -20,6 +33,36 @@ nav {
     font-size: 1rem;
     font-weight: 300;
     user-select: none;
+}
+
+.logo-img {
+  height: 2.5rem;
+  width: auto;
+  max-width: 160px;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.04);
+}
+.logo-img:hover, .logo-img:focus {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    border-radius: 1.25rem;
+    background: rgba(20,20,30,0.5);
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    border: none;
+    backdrop-filter: blur(12px);
 }
 
 .menu-toggle {
@@ -227,6 +270,75 @@ nav {
     transform: translate(-5px) translateY(10px) rotate(5deg);
 }
 
+/* Nav link enhancements: text-only, no box, elegant underline/gradient on hover */
+.md\:flex .font-neueMontreal, .md\:flex .font-monumentExtended {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #fff;
+  transition: color 0.3s, text-shadow 0.3s, background 0.3s, transform 0.3s;
+  outline: none;
+  position: relative;
+}
+.md\:flex .font-neueMontreal:hover, .md\:flex .font-neueMontreal:focus {
+  color: #60a5fa;
+  text-shadow: 0 2px 8px rgba(96,165,250,0.10);
+  background: none;
+  transform: translateY(-2px) scale(1.04);
+}
+.md\:flex .font-neueMontreal::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg,#3b82f6,#60a5fa);
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+.md\:flex .font-neueMontreal:hover::after, .md\:flex .font-neueMontreal:focus::after {
+  width: 100%;
+}
+.md\:flex .font-monumentExtended {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #fff;
+  transition: color 0.3s, text-shadow 0.3s, background 0.3s, transform 0.3s;
+  outline: none;
+  position: relative;
+}
+.md\:flex .font-monumentExtended:hover, .md\:flex .font-monumentExtended:focus {
+  color: #fff;
+  background: none;
+  text-shadow: 0 2px 8px rgba(96,165,250,0.10);
+  transform: scale(1.04);
+}
+.md\:flex .font-monumentExtended::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg,#3b82f6,#60a5fa);
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+.md\:flex .font-monumentExtended:hover::after, .md\:flex .font-monumentExtended:focus::after {
+  width: 100%;
+}
+
+/* Remove box from mobile nav links too */
+.bg-primary, .hover\:bg-secondary, .shadow, .rounded-md, .inline-block {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Mobile nav enhancements */
 @media (max-width: 900px) {
     .hero h1 {
         width: 100%;
@@ -254,4 +366,37 @@ nav {
         font-size: 5vw;
         /* background-color: bisque; */
     }
+
+    .logo-img {
+        height: 2rem;
+        max-width: 120px;
+    }
+}
+
+.neon-glow {
+  text-shadow: 0 0 8px #3b82f6, 0 0 16px #60a5fa, 0 0 32px #0ff;
+  filter: drop-shadow(0 0 8px #3b82f6) drop-shadow(0 0 16px #60a5fa);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #a21caf, #06b6d4, #3b82f6);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-x 2.5s linear infinite;
+}
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 6s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1) both;
 } 
