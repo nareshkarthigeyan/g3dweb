@@ -2,20 +2,8 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useState } from "react";
+import AnimatedText from "./components/AnimatedText";
 
-// export default function Home() {
-//   return (
-//     <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white font-['NeueMontreal'] relative overflow-hidden">
-//       {/* Animated background elements */}
-//       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl"></div>
-//       <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/20 rounded-full blur-3xl"></div>
-//       {/* Hero Section */}
-//       <section className="relative h-screen flex items-center justify-center overflow-hidden animate-fade-in-up">
-//         <div className="container mx-auto px-6 relative z-10">
-//           <div className="flex flex-col items-center text-center">
-//             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight animate-fade-in-up">
-//               Unleash <span className="text-primary">Innovation</span> <br className="hidden md:block" /> with <span className="text-primary">3D Printing</span>
-//             </h1>
 const headline1 = "Unleash";
 const headline1Orange = " Innovation";
 const headline2 = "with";
@@ -24,43 +12,7 @@ const sub = "Transforming ideas into reality with cutting-edge";
 const subb = "additive manufacturing for every industry.";
 
 export default function Home() {
-  const [hoveredCharIndex, setHoveredCharIndex] = useState(null);
   const [hoveredWordIndex, setHoveredWordIndex] = useState(null);
-
-  const renderText = (text, startIndex, colorClass = "") => {
-    return text.split("").map((char, i) => {
-      const globalIndex = startIndex + i;
-      const distance =
-        hoveredCharIndex === null
-          ? 0
-          : Math.abs(globalIndex - hoveredCharIndex);
-      let skewX = 0;
-      if (hoveredCharIndex !== null) {
-        if (distance === 0) skewX = -15;
-        else if (distance === 1) skewX = -7;
-        else if (distance === 2) skewX = -3;
-      }
-
-      return (
-        <motion.span
-          key={globalIndex + colorClass}
-          onMouseEnter={() => setHoveredCharIndex(globalIndex)}
-          onMouseLeave={() => setHoveredCharIndex(null)}
-          animate={{ skewX }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 25,
-          }}
-          className={`inline-block mx-[1px] ${
-            char === " " ? "w-2" : ""
-          } hover:cursor-pointer ${colorClass}`}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      );
-    });
-  };
 
   // ✅ Render subtitle words
   const renderWords = (text, startIndex, colorClass = "") => {
@@ -83,7 +35,7 @@ export default function Home() {
           key={globalIndex + colorClass}
           onMouseEnter={() => setHoveredWordIndex(globalIndex)}
           onMouseLeave={() => setHoveredWordIndex(null)}
-          animate={{ skewX }}
+          animate={{ skewX, scale: distance === 0 ? 1 : 1.05 }}
           transition={{
             type: "spring",
             stiffness: 400,
@@ -97,16 +49,6 @@ export default function Home() {
     });
   };
 
-  let runningIndex = 0;
-  const part1 = renderText(headline1, runningIndex);
-  runningIndex += headline1.length;
-  const part2 = renderText(headline1Orange, runningIndex, "text-primary");
-  runningIndex += headline1Orange.length;
-  const part3 = renderText(headline2, runningIndex);
-  runningIndex += headline2.length;
-  const part4 = renderText(headline2Orange, runningIndex, "text-primary");
-
-  // Use word count instead of letter index for subtitle
   const sub1 = renderWords(sub, 0);
   const sub2 = renderWords(subb, sub.split(" ").length);
 
@@ -119,28 +61,16 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden animate-fade-in-up">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
-            <motion.h1
-              className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
-              style={{
-                display: "inline-flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-              }}
-            >
-              {part1}
-              {part2}
-            </motion.h1>
-            <motion.h1
-              className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
-              style={{
-                display: "inline-flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-              }}
-            >
-              {part3}
-              {part4}
-            </motion.h1>
+            <AnimatedText
+              text1={headline1}
+              text2={headline1Orange}
+              css="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
+            />
+            <AnimatedText
+              text1={headline2}
+              text2={headline2Orange}
+              css="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
+            />
 
             <motion.p
               className="text-xl md:text-3xl text-gray-200 mb-10 max-w-lg mx-auto font-medium font-['NeueMontreal'] animate-fade-in-up"
@@ -158,8 +88,8 @@ export default function Home() {
               <Link href="/services">
                 <motion.button
                   whileHover={{
-                    scale: 1.15,
-                    rotate: 5,
+                    scale: 1.1,
+                    rotate: 3,
                     transition: {
                       type: "tween",
                       ease: "easeOut",
@@ -176,8 +106,8 @@ export default function Home() {
               <Link href="/contact">
                 <motion.button
                   whileHover={{
-                    scale: 1.15,
-                    rotate: 5,
+                    scale: 1.1,
+                    rotate: 3,
                     transition: {
                       type: "tween",
                       ease: "easeOut",
@@ -197,9 +127,14 @@ export default function Home() {
 
       {/* What We Do Section */}
       <section className="py-20 bg-background/90 rounded-3xl shadow-2xl border border-dark-100 container mx-auto px-6 my-20 animate-fade-in-up">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended']">
+        {/* <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended']">
           What We <span className="text-primary">Do</span>
-        </h2>
+        </h2> */}
+        <AnimatedText
+          text1="What We"
+          text2=" Do"
+          css="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended']"
+        />
         <p className="text-xl text-gray-400 text-center mb-12 max-w-3xl mx-auto font-['NeueMontreal']">
           Galactic 3D is your partner for advanced additive manufacturing, from
           concept to production. We deliver design, prototyping, production, and
