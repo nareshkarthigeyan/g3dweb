@@ -89,6 +89,12 @@ export default function Navbar() {
             >
               Services
             </Link>
+            <Link
+              href="/hiring"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Hiring
+            </Link>
             {/* <Link href="/projects" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">
               Projects
             </Link>
@@ -192,6 +198,12 @@ export default function Navbar() {
               Services
             </Link>
             <Link
+              href="/hiring"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Hiring
+            </Link>
+            {/* <Link
               href="/projects"
               className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
             >
@@ -228,7 +240,7 @@ export default function Navbar() {
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                 ></path>
               </svg>
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="bg-primary hover:bg-secondary text-white font-monumentExtended tracking-wide px-4 py-2 rounded-md inline-block transition duration-300 shadow focus:outline-none focus-visible:underline"
