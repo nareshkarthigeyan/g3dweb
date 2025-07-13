@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import AnimatedButton from "./AnimatedButton";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,12 +118,17 @@ export default function Navbar() {
                 ></path>
               </svg>
             </Link> */}
-            <Link
+            {/* <Link
               href="/contact"
               className="bg-primary hover:bg-secondary text-white font-monumentExtended tracking-wide px-5 py-2 rounded-md transition duration-300 shadow focus:outline-none focus-visible:underline"
             >
               Contact Us
-            </Link>
+            </Link> */}
+            <AnimatedButton
+              href="/contact"
+              css="bg-primary hover:bg-secondary text-white font-monumentExtended tracking-wide px-5 py-2 rounded-md transition duration-300 shadow focus:outline-none focus-visible:underline"
+              content="Contact Us"
+            />
           </div>
 
           {/* Mobile Menu Button */}

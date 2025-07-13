@@ -3,6 +3,8 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useState } from "react";
 import AnimatedText from "./components/AnimatedText";
+import AnimatedButton from "./components/AnimatedButton";
+import AnimatedWord from "./components/AnimatedWord";
 
 const headline1 = "Unleash";
 const headline1Orange = " Innovation";
@@ -12,45 +14,45 @@ const sub = "Transforming ideas into reality with cutting-edge";
 const subb = "additive manufacturing for every industry.";
 
 export default function Home() {
-  const [hoveredWordIndex, setHoveredWordIndex] = useState(null);
+  // const [hoveredWordIndex, setHoveredWordIndex] = useState(null);
 
-  // ✅ Render subtitle words
-  const renderWords = (text, startIndex, colorClass = "") => {
-    const words = text.split(" ");
-    return words.map((word, i) => {
-      const globalIndex = startIndex + i;
-      const distance =
-        hoveredWordIndex === null
-          ? 0
-          : Math.abs(globalIndex - hoveredWordIndex);
-      let skewX = 0;
-      if (hoveredWordIndex !== null) {
-        if (distance === 0) skewX = -15;
-        else if (distance === 1) skewX = -7;
-        else if (distance === 2) skewX = -3;
-      }
+  // // ✅ Render subtitle words
+  // const renderWords = (text, startIndex, colorClass = "") => {
+  //   const words = text.split(" ");
+  //   return words.map((word, i) => {
+  //     const globalIndex = startIndex + i;
+  //     const distance =
+  //       hoveredWordIndex === null
+  //         ? 0
+  //         : Math.abs(globalIndex - hoveredWordIndex);
+  //     let skewX = 0;
+  //     if (hoveredWordIndex !== null) {
+  //       if (distance === 0) skewX = -15;
+  //       else if (distance === 1) skewX = -7;
+  //       else if (distance === 2) skewX = -3;
+  //     }
 
-      return (
-        <motion.span
-          key={globalIndex + colorClass}
-          onMouseEnter={() => setHoveredWordIndex(globalIndex)}
-          onMouseLeave={() => setHoveredWordIndex(null)}
-          animate={{ skewX, scale: distance === 0 ? 1 : 1.05 }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 25,
-          }}
-          className={`inline-block mx-[4px] hover:cursor-pointer ${colorClass}`}
-        >
-          {word}&nbsp;
-        </motion.span>
-      );
-    });
-  };
+  //     return (
+  //       <motion.span
+  //         key={globalIndex + colorClass}
+  //         onMouseEnter={() => setHoveredWordIndex(globalIndex)}
+  //         onMouseLeave={() => setHoveredWordIndex(null)}
+  //         animate={{ skewX, scale: distance === 0 ? 1 : 1.05 }}
+  //         transition={{
+  //           type: "spring",
+  //           stiffness: 400,
+  //           damping: 25,
+  //         }}
+  //         className={`inline-block mx-[4px] hover:cursor-pointer ${colorClass}`}
+  //       >
+  //         {word}&nbsp;
+  //       </motion.span>
+  //     );
+  //   });
+  // };
 
-  const sub1 = renderWords(sub, 0);
-  const sub2 = renderWords(subb, sub.split(" ").length);
+  // const sub1 = renderWords(sub, 0);
+  // const sub2 = renderWords(subb, sub.split(" ").length);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white font-['NeueMontreal'] relative overflow-hidden">
@@ -61,18 +63,33 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden animate-fade-in-up">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
-            <AnimatedText
-              text1={headline1}
-              text2={headline1Orange}
-              css="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
-            />
-            <AnimatedText
-              text1={headline2}
-              text2={headline2Orange}
-              css="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
-            />
+            {/* Animated Text (Visible on md and up) */}
+            <div className="hidden md:block">
+              <AnimatedText
+                text1={headline1}
+                text2={headline1Orange}
+                css="text-2xl md:text-5xl lg:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
+              />
+              <AnimatedText
+                text1={headline2}
+                text2={headline2Orange}
+                css="text-2xl md:text-5xl lg:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal tracking-tight"
+              />
+            </div>
 
-            <motion.p
+            {/* Static Text (Visible below md) */}
+            <div className="block md:hidden">
+              <h1 className="text-3xl font-extrabold  text-white leading-tight text-center font-['MonumentExtended'] tracking-tight">
+                {headline1}
+                <span className="text-primary">{headline1Orange}</span>
+              </h1>
+              <h1 className="text-3xl font-extrabold mb-4 text-white leading-tight text-center font-['MonumentExtended'] tracking-tight">
+                {headline2}
+                <span className="text-primary">{headline2Orange}</span>
+              </h1>
+            </div>
+
+            {/* <motion.p
               className="text-xl md:text-3xl text-gray-200 mb-10 max-w-lg mx-auto font-medium font-['NeueMontreal'] animate-fade-in-up"
               style={{
                 display: "inline-flex",
@@ -82,28 +99,28 @@ export default function Home() {
             >
               {sub1}
               {sub2}
-            </motion.p>
+            </motion.p> */}
+
+            <AnimatedWord
+              word1={sub}
+              word2={subb}
+              css="text-xl md:text-3xl text-gray-200 mb-10 max-w-lg mx-auto font-medium font-['NeueMontreal'] animate-fade-in-up"
+            />
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up">
-              <Link href="/services">
-                <motion.button
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 3,
-                    transition: {
-                      type: "tween",
-                      ease: "easeOut",
-                      duration: 0.01, // adjust for speed
-                    },
-                  }}
-                  className="bg-primary hover:bg-secondary text-white font-bold py-4 px-10 rounded-lg text-lg shadow-lg transition duration-100 group relative overflow-hidden hover:cursor-pointer"
-                >
-                  <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
-                  <span className="relative z-10">Explore Services</span>
-                </motion.button>
-              </Link>
+              <AnimatedButton
+                href="/services"
+                css="bg-primary hover:bg-secondary text-white font-bold py-4 px-10 rounded-lg text-lg shadow-lg transition duration-100 group relative overflow-hidden hover:cursor-pointer"
+                content="Explore Services"
+              />
 
-              <Link href="/contact">
+              <AnimatedButton
+                href="/contact"
+                css="bg-white/10 hover:bg-white/20 border-2 border-white text-white font-bold py-4 px-10 rounded-lg text-lg shadow-lg transition duration-100 group relative overflow-hidden"
+                content="Contact Us"
+              />
+
+              {/* <Link href="/contact">
                 <motion.button
                   whileHover={{
                     scale: 1.1,
@@ -119,7 +136,7 @@ export default function Home() {
                   <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
                   <span className="relative z-10">Contact Us</span>
                 </motion.button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
