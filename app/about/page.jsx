@@ -116,9 +116,9 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">Alex Morgan</h3>
+            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">Nithin Mohan</h3>
             <p className="text-primary mb-2 font-['NeueMontreal']">CEO & Founder</p>
-            <p className="text-gray-400 font-['NeueMontreal']">With over 15 years in advanced manufacturing, Alex leads our vision and strategic direction.</p>
+            <p className="text-gray-400 font-['NeueMontreal']">With over 15 years in advanced manufacturing, Nithin leads our vision and strategic direction.</p>
           </div>
           {/* Team Member 2 */}
           <div className="group animate-fade-in-up">
@@ -136,7 +136,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">Sarah Chen</h3>
+            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">Aabid</h3>
             <p className="text-primary mb-2 font-['NeueMontreal']">Chief Technology Officer</p>
             <p className="text-gray-400 font-['NeueMontreal']">Sarah oversees our technical operations and drives innovation in our manufacturing processes.</p>
           </div>
@@ -156,9 +156,9 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">David Rodriguez</h3>
-            <p className="text-primary mb-2 font-['NeueMontreal']">Head of Design</p>
-            <p className="text-gray-400 font-['NeueMontreal']">David leads our design team, ensuring all projects meet the highest standards of form and function.</p>
+            <h3 className="text-xl font-bold mb-1 font-['MonumentExtended']">S Bharath Kumar Rodriguez</h3>
+            <p className="text-primary mb-2 font-['NeueMontreal']">Head of Intership</p>
+            <p className="text-gray-400 font-['NeueMontreal']">SBK leads our intern team, ensuring all projects meet the highest standards of form and function.</p>
           </div>
           {/* Team Member 4 */}
           <div className="group animate-fade-in-up">

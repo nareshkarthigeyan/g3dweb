@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "9.75.0",
+    "@react-three/fiber": "8.13.3",
     "gsap": "^3.13.0",
     "motion": "^12.23.3",
     "next": "14.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "0.153.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",

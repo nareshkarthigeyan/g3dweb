@@ -95,6 +95,18 @@ export default function Navbar() {
             >
               Hiring
             </Link>
+            <Link
+              href="/training"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Training
+            </Link>
+            <Link
+              href="/sell"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Sell
+            </Link>
             {/* <Link href="/projects" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">
               Projects
             </Link>
@@ -202,6 +214,18 @@ export default function Navbar() {
               className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
             >
               Hiring
+            </Link>
+            <Link
+              href="/training"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Training
+            </Link>
+            <Link
+              href="/sell"
+              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+            >
+              Sell
             </Link>
             {/* <Link
               href="/projects"

@@ -12,10 +12,6 @@ import CTA from './components/CTA';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white font-['NeueMontreal'] relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/20 rounded-full blur-3xl" />
-
       <Hero />
       <OurPartners />
       <WhatWeDo />
