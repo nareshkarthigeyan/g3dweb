@@ -132,20 +132,20 @@ export default function Submit() {
   };
   
   return (
-    <div className="min-h-screen bg-dark-200 text-white pt-24 pb-20 font-['NeueMontreal']">
+    <div className="min-h-screen bg-white text-black pt-24 pb-20 font-['NeueMontreal']">
       {/* Header with 3D elements and How it Works */}
       <div className="container mx-auto px-6 mb-16 relative overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-orange-100 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-orange-200 rounded-full blur-3xl"></div>
         <div className="relative z-10">
           <div className="inline-block mb-4">
-            <div className="flex items-center space-x-2 bg-dark-300 rounded-full py-1 px-3 mb-4 w-fit">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-sm font-medium font-['NeueMontreal']">3D Printing Service</span>
+            <div className="flex items-center space-x-2 bg-orange-50 rounded-full py-1 px-3 mb-4 w-fit">
+              <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+              <span className="text-sm font-medium font-['NeueMontreal'] text-black">3D Printing Service</span>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative text-primary font-['MonumentExtended'] drop-shadow-xl tracking-tight leading-tight">Model Gateway</h1>
-          <p className="text-xl text-gray-400 max-w-3xl font-['NeueMontreal']">Upload your 3D models and we'll bring them to life with our professional 3D printing services. Fill out the form below with your project details and specifications.</p>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative text-orange-600 font-['MonumentExtended'] drop-shadow-xl tracking-tight leading-tight">Model Gateway</h1>
+          <p className="text-xl text-gray-700 max-w-3xl font-['NeueMontreal']">Upload your 3D models and we'll bring them to life with our professional 3D printing services. Fill out the form below with your project details and specifications.</p>
         </div>
         {/* How it works strip */}
         <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 bg-dark-100/80 rounded-xl shadow-lg p-6 border border-dark-300 animate-fade-in-up">
@@ -169,11 +169,11 @@ export default function Submit() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Form Section */}
           <div className="lg:col-span-2">
-            <div className="bg-dark-100 p-8 rounded-3xl shadow-2xl border border-dark-300 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-primary font-['MonumentExtended'] tracking-tight leading-tight">Project Details</h2>
+            <div className="bg-orange-50 p-8 rounded-3xl shadow-2xl border border-orange-200 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-orange-600 font-['MonumentExtended'] tracking-tight leading-tight">Project Details</h2>
               {submitSuccess ? (
-                <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6 text-center animate-fade-in-up">
-                  <svg className="w-16 h-16 text-green-500 mx-auto mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-green-100 border border-green-300 rounded-lg p-6 text-center animate-fade-in-up">
+                  <svg className="w-16 h-16 text-green-600 mx-auto mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   <h3 className="text-2xl font-bold mb-2 font-['MonumentExtended']">Submission Successful!</h3>
@@ -389,9 +389,9 @@ export default function Submit() {
             </div>
           </div>
           {/* Submission Guidelines */}
-          <aside className="bg-dark-100/80 rounded-3xl shadow-xl p-8 border border-dark-300 flex flex-col gap-8 animate-fade-in-up">
-            <h3 className="text-2xl font-bold mb-4 text-primary font-['MonumentExtended']">Submission Guidelines</h3>
-            <ul className="list-disc list-inside text-gray-300 space-y-2 font-['NeueMontreal']">
+          <aside className="bg-orange-50 rounded-3xl shadow-xl p-8 border border-orange-200 flex flex-col gap-8 animate-fade-in-up lg:sticky lg:top-28">
+            <h3 className="text-2xl font-bold mb-4 text-orange-600 font-['MonumentExtended']">Submission Guidelines</h3>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 font-['NeueMontreal']">
               <li>Accepted file types: STL, OBJ, GLTF, GLB, 3MF, FBX, STEP, STP</li>
               <li>Maximum file size: 50MB</li>
               <li>Include all relevant project details for accurate quoting</li>
@@ -399,8 +399,8 @@ export default function Submit() {
               <li>Contact us for special materials or requirements</li>
             </ul>
             <div className="mt-6">
-              <h4 className="text-lg font-semibold mb-2 text-primary font-['MonumentExtended']">Need help?</h4>
-              <p className="text-gray-400 font-['NeueMontreal']">See our <Link href="/contact" className="underline hover:text-primary transition-colors">contact page</Link> or <a href="mailto:admin@galactic-3d.com" className="underline hover:text-primary transition-colors">email support</a>.</p>
+              <h4 className="text-lg font-semibold mb-2 text-orange-600 font-['MonumentExtended']">Need help?</h4>
+              <p className="text-gray-700 font-['NeueMontreal']">See our <Link href="/contact" className="underline hover:text-orange-600 transition-colors">contact page</Link> or <a href="mailto:admin@galactic-3d.com" className="underline hover:text-orange-600 transition-colors">email support</a>.</p>
             </div>
           </aside>
         </div>

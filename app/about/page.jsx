@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20 font-['NeueMontreal'] relative overflow-hidden">
+  <div className="min-h-screen font-['NeueMontreal']">
       {/* Animated background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/20 rounded-full blur-3xl"></div>

@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed font-['test'] w-full z-50 transition-all duration-300 backdrop-blur-lg bg-black/60  shadow-xl ${
+      className={`fixed font-['test'] w-full z-50 transition-all duration-300 bg-white shadow-xl border-b border-orange-100 ${
         isScrolled ? "py-3" : "py-5"
       }`}
     >
@@ -73,40 +73,48 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               What We Do
             </Link>
             <Link
               href="/services"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Services
             </Link>
             <Link
               href="/hiring"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Hiring
             </Link>
             <Link
               href="/training"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Training
             </Link>
             <Link
               href="/sell"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Sell
             </Link>
+            {/* <Link href="/industries" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Industries</Link> */}
+            {/* <Link href="/machines" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Machines</Link> */}
+            {/* <Link href="/marketplace" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Marketplace</Link> */}
+            <Link href="/resources" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Resources</Link>
+            <Link href="/projects" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Projects</Link>
+            <Link href="/blog" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Blog</Link>
+            {/* <Link href="/newsletter" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Newsletter</Link> */}
+            <Link href="/submit" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 flex items-center focus:outline-none focus-visible:underline"><span>Submit 3D File</span><svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg></Link>
             {/* <Link href="/projects" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">
               Projects
             </Link>
@@ -144,7 +152,7 @@ export default function Navbar() {
             </Link> */}
             <AnimatedButton
               href="/contact"
-              css="bg-primary hover:bg-secondary text-white font-monumentExtended tracking-wide px-5 py-2 rounded-md transition duration-300 shadow focus:outline-none focus-visible:underline"
+              css="bg-primary hover:bg-orange-700 text-white font-monumentExtended tracking-wide px-5 py-2 rounded-md transition duration-300 shadow focus:outline-none focus-visible:underline"
               content="Contact Us"
             />
           </div>
@@ -193,40 +201,48 @@ export default function Navbar() {
           <div className="flex flex-col space-y-4 mt-4 pb-5">
             <Link
               href="/"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               What We Do
             </Link>
             <Link
               href="/services"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Services
             </Link>
             <Link
               href="/hiring"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Hiring
             </Link>
             <Link
               href="/training"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Training
             </Link>
             <Link
               href="/sell"
-              className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
+              className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline"
             >
               Sell
             </Link>
+            <Link href="/industries" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Industries</Link>
+            <Link href="/machines" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Machines</Link>
+            <Link href="/marketplace" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Marketplace</Link>
+            <Link href="/resources" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Resources</Link>
+            <Link href="/projects" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Projects</Link>
+            <Link href="/blog" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 focus:outline-none focus-visible:underline">Blog</Link>
+            <Link href="/newsletter" className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline">Newsletter</Link>
+            <Link href="/submit" className="text-black font-neueMontreal tracking-wide text-lg hover:text-orange-600 transition duration-300 flex items-center focus:outline-none focus-visible:underline"><span>Submit 3D File</span><svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg></Link>
             {/* <Link
               href="/projects"
               className="text-white font-neueMontreal tracking-wide text-lg hover:text-primary transition duration-300 focus:outline-none focus-visible:underline"
@@ -267,7 +283,7 @@ export default function Navbar() {
             </Link> */}
             <Link
               href="/contact"
-              className="bg-primary hover:bg-secondary text-white font-monumentExtended tracking-wide px-4 py-2 rounded-md inline-block transition duration-300 shadow focus:outline-none focus-visible:underline"
+              className="bg-primary hover:bg-orange-700 text-white font-monumentExtended tracking-wide px-4 py-2 rounded-md inline-block transition duration-300 shadow focus:outline-none focus-visible:underline"
             >
               Contact Us
             </Link>

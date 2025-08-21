@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20">
+    <div className="min-h-screen pt-24 pb-20">
       {/* Header with animation */}
       <div className="relative container mx-auto px-6 mb-16 flex flex-col items-center justify-center text-center animate-fade-in">
         <div className="absolute inset-0 -z-10 pointer-events-none">

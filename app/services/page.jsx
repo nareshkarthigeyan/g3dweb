@@ -33,60 +33,59 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20 font-['NeueMontreal'] relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-black pt-24 pb-20 font-['NeueMontreal'] relative overflow-hidden">
+      {/* Faint orange gradients for background */}
+      <div className="pointer-events-none absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-primary/10 via-orange-100/30 to-white rounded-full blur-3xl"></div>
+      <div className="pointer-events-none absolute -bottom-40 -left-20 w-80 h-80 bg-gradient-to-tr from-primary/20 via-orange-100/20 to-white rounded-full blur-3xl"></div>
       {/* Services Header with Animated Elements */}
       <div className="container mx-auto px-6 mb-16 relative z-10 animate-fade-in-up">
-          <div className="inline-block mb-4">
-            <div className="flex items-center space-x-2 bg-dark-200 rounded-full py-1 px-3 mb-4 w-fit">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm font-medium font-['NeueMontreal']">Advanced Manufacturing Solutions</span>
+        <div className="inline-block mb-4">
+          <div className="flex items-center space-x-2 bg-orange-100 rounded-full py-1 px-3 mb-4 w-fit">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-sm font-medium font-['NeueMontreal'] text-black">Advanced Manufacturing Solutions</span>
           </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal drop-shadow-xl tracking-tight leading-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-metal">Our</span> 
-            <span className="bg-clip-text text-transparent bg-gradient-red ml-3">Services</span>
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative font-['MonumentExtended'] text-black tracking-tight leading-tight">
+          Our <span className="text-primary ml-3">Services</span>
           <div className="absolute -bottom-3 left-0 w-20 h-1 bg-primary rounded-full"></div>
-          </h1>
-        <p className="text-xl text-gray-400 max-w-3xl font-['NeueMontreal']">Galactic 3D offers comprehensive additive manufacturing solutions to bring your ideas to life with precision and innovation. We specialize in metal, alloy, and polymer 3D printing for industries that demand excellence.</p>
+        </h1>
+        <p className="text-xl text-black max-w-3xl font-['NeueMontreal']">Galactic 3D offers comprehensive additive manufacturing solutions to bring your ideas to life with precision and innovation. We specialize in metal, alloy, and polymer 3D printing for industries that demand excellence.</p>
       </div>
       {/* Main Services with 3D Effects */}
       <div className="container mx-auto px-6 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* 3D Printing Service */}
           <div className="group animate-fade-in-up">
-            <div className="relative overflow-hidden rounded-3xl mb-8 border border-dark-100 group-hover:border-primary transition-all duration-500 shadow-2xl bg-background/80 backdrop-blur-xl">
+            <div className="relative overflow-hidden rounded-3xl mb-8 border border-orange-100 group-hover:border-primary transition-all duration-500 shadow-2xl bg-white">
               <img 
                 src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
                 alt="Industrial 3D Printing" 
                 className="w-full h-80 object-cover transition duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-500/90 via-dark-400/50 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-100/80 via-white/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-2xl font-bold group-hover:text-primary transition duration-300 font-['MonumentExtended']">Industrial 3D Printing</h3>
+                <h3 className="text-2xl font-bold group-hover:text-primary transition duration-300 font-['MonumentExtended'] text-black">Industrial 3D Printing</h3>
                 <div className="w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-full mt-2 rounded-full"></div>
               </div>
               <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 font-['NeueMontreal']">
                 Metal & Polymer
               </div>
             </div>
-            <p className="text-gray-400 mb-6 font-['NeueMontreal']">Our industrial-grade 3D printing services utilize the latest technology to create high-quality parts and prototypes with exceptional precision and detail. We offer a wide range of materials including polymers, metals, and composites to meet your specific requirements.</p>
+            <p className="text-black mb-6 font-['NeueMontreal']">Our industrial-grade 3D printing services utilize the latest technology to create high-quality parts and prototypes with exceptional precision and detail. We offer a wide range of materials including polymers, metals, and composites to meet your specific requirements.</p>
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="material-sample bg-dark-200/80 p-4 rounded-xl border border-dark-100 hover:border-primary transition duration-300 shadow-lg" style={{transformStyle: 'preserve-3d', transition: 'all 0.3s ease'}}>
+              <div className="material-sample bg-orange-50 p-4 rounded-xl border border-orange-100 hover:border-primary transition duration-300 shadow-lg" style={{transformStyle: 'preserve-3d', transition: 'all 0.3s ease'}}>
                 <div className="flex items-center mb-3">
                   <span className="w-3 h-3 rounded-full bg-metal-300 mr-2"></span>
-                  <h4 className="font-bold font-['MonumentExtended']">Titanium Alloys</h4>
+                  <h4 className="font-bold font-['MonumentExtended'] text-black">Titanium Alloys</h4>
                 </div>
-                <p className="text-sm text-gray-400 font-['NeueMontreal']">High strength-to-weight ratio, excellent corrosion resistance</p>
+                <p className="text-sm text-black font-['NeueMontreal']">High strength-to-weight ratio, excellent corrosion resistance</p>
               </div>
-              <div className="material-sample bg-dark-200/80 p-4 rounded-xl border border-dark-100 hover:border-primary transition duration-300 shadow-lg" style={{transformStyle: 'preserve-3d', transition: 'all 0.3s ease'}}>
+              <div className="material-sample bg-orange-50 p-4 rounded-xl border border-orange-100 hover:border-primary transition duration-300 shadow-lg" style={{transformStyle: 'preserve-3d', transition: 'all 0.3s ease'}}>
                 <div className="flex items-center mb-3">
                   <span className="w-3 h-3 rounded-full bg-metal-400 mr-2"></span>
-                  <h4 className="font-bold font-['MonumentExtended']">Stainless Steel</h4>
+                  <h4 className="font-bold font-['MonumentExtended'] text-black">Stainless Steel</h4>
                 </div>
-                <p className="text-sm text-gray-400 font-['NeueMontreal']">Durable, heat-resistant, ideal for functional parts</p>
+                <p className="text-sm text-black font-['NeueMontreal']">Durable, heat-resistant, ideal for functional parts</p>
               </div>
             </div>
             <ul className="space-y-3 mb-6">

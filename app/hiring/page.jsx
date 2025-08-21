@@ -4,19 +4,18 @@ import styles from "./hiring.module.css";
 
 const HiringPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white font-['NeueMontreal'] relative overflow-hidden pt-20">
+  <div className="min-h-screen font-['NeueMontreal'] relative overflow-hidden pt-20">
       {/* Animated background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 mb-16 flex flex-col items-center justify-center text-center animate-fade-in">
         <h1 className="text-xl sm:text-2xl md:text-3xl drop-shadow-xl tracking-tight leading-tight animate-slide-down">
-          Shape the Future of{" "}
-          <span className={styles.primaryColor}>Manufacturing</span> With Us
+          Shape the Future of Manufacturing With Us
         </h1>
         <p className="text-base sm:text-lg md:text-2xl pt-4 text-gray-300 max-w-3xl font-['test'] mx-auto animate-fade-in delay-200">
           We’re building the future of additive manufacturing one layer at a
-          time. You think you got something to contribute?
+          time. You think you got something to contribute
         </p>
       </div>
 
@@ -106,6 +105,27 @@ const HiringPage = () => {
                   className="w-full bg-black/80 border border-gray-700 rounded-lg py-4 px-5 text-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 shadow-sm hover:shadow-primary/10"
                   placeholder="https://github.com/johndoe"
                 />
+              </div>
+              <div>
+                <label
+                  htmlFor="work-type"
+                  className="block text-base font-semibold text-gray-300 mb-2"
+                  style={{ fontFamily: "NeueMontreal, new, sans-serif" }}
+                >
+                  Type of Work<span className="text-primary">*</span>
+                </label>
+                <select
+                  id="work-type"
+                  aria-required="true"
+                  className={`w-full bg-black/80 border border-gray-700 rounded-lg py-4 px-5 text-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 shadow-sm hover:shadow-primary/10 ${styles.customSelect}`}
+                >
+                  <option value="">Select a work type</option>
+                  <option value="technical">Technical</option>
+                  <option value="design">Design</option>
+                  <option value="operations">Operations</option>
+                  <option value="sales">Sales</option>
+                  <option value="marketing">Marketing</option>
+                </select>
               </div>
               <div>
                 <label

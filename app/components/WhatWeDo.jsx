@@ -3,20 +3,20 @@ import AnimatedText from "./AnimatedText";
 
 export default function WhatWeDo() {
   return (
-    <section className="py-20 bg-background/90 rounded-3xl shadow-2xl border border-dark-100 container mx-auto px-6 my-20 animate-fade-in-up">
+    <section className="py-2 rounded-3xl shadow-2xl border border-orange-100 text-black container mx-auto px-6 my-20 animate-fade-in-up p-6">
       <AnimatedText
         text1="What We"
         text2=" Do"
-        css="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended']"
+        css="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended'] text-black p-6"
       />
-      <p className="text-xl text-gray-400 text-center mb-12 max-w-3xl mx-auto font-['NeueMontreal']">
+      <p className="text-xl text-center mb-12 max-w-3xl mx-auto font-['NeueMontreal']">
         Galactic 3D is your partner for advanced additive manufacturing, from
         concept to production. We deliver design, prototyping, production, and
         consulting for every industry.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div className="bg-dark-200/80 p-8 rounded-2xl border border-dark-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
-          <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:animate-pulse-glow transition duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-6">
+        <div className=" p-8 rounded-2xl border border-orange-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:animate-pulse-glow transition duration-300">
             <svg
               className="w-7 h-7 text-primary"
               fill="none"
@@ -39,7 +39,7 @@ export default function WhatWeDo() {
             quickly and efficiently.
           </p>
         </div>
-        <div className="bg-dark-200/80 p-8 rounded-2xl border border-dark-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
+        <div className=" p-8 rounded-2xl border border-orange-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
           <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:animate-pulse-glow transition duration-300">
             <svg
               className="w-7 h-7 text-primary"
@@ -63,7 +63,7 @@ export default function WhatWeDo() {
             options for every application.
           </p>
         </div>
-        <div className="bg-dark-200/80 p-8 rounded-2xl border border-dark-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
+        <div className=" p-8 rounded-2xl border border-orange-100 hover:border-primary transition duration-300 shadow-xl group animate-fade-in-up">
           <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:animate-pulse-glow transition duration-300">
             <svg
               className="w-7 h-7 text-primary"

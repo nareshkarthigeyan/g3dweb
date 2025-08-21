@@ -34,30 +34,31 @@ const TrainingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white pt-24 pb-20 font-['NeueMontreal'] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-primary/20 rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-black pt-24 pb-20 font-['NeueMontreal'] relative overflow-hidden">
+      {/* Faint orange gradient at the top right */}
+      <div className="pointer-events-none absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/10 via-orange-100/30 to-white rounded-full blur-3xl"></div>
+      <div className="pointer-events-none absolute bottom-1/4 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-primary/20 via-orange-100/20 to-white rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 mb-16 animate-fade-in-up">
         <div className="inline-block mb-4">
-          <div className="flex items-center space-x-2 bg-dark-200 rounded-full py-1 px-3 mb-4 w-fit">
+          <div className="flex items-center space-x-2 bg-orange-100 rounded-full py-1 px-3 mb-4 w-fit">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm font-medium font-['NeueMontreal']">Development</span>
+            <span className="text-sm font-medium font-['NeueMontreal'] text-black">Development</span>
           </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 font-['MonumentExtended'] bg-clip-text text-transparent bg-gradient-metal drop-shadow-xl tracking-tight leading-tight">
-          Training <span className='bg-clip-text text-transparent bg-gradient-red'>Programs</span>
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 font-['MonumentExtended'] text-black tracking-tight leading-tight relative">
+          Training <span className='text-primary'>Programs</span>
           <div className="absolute -bottom-3 left-0 w-20 h-1 bg-primary"></div>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl font-['NeueMontreal']">
+        <p className="text-xl text-black max-w-3xl font-['NeueMontreal']">
           Empowering the next generation of additive manufacturing experts with industry-leading training.
         </p>
       </div>
 
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {trainingSections.map((section, index) => (
-          <div key={index} className="bg-black/60 p-8 rounded-2xl border border-dark-100 hover:border-primary transition duration-300 h-full shadow-xl group animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-            <h2 className="text-2xl font-bold mb-4 font-['MonumentExtended']">{section.title}</h2>
-            <p className="text-gray-400 font-['NeueMontreal']">{section.description}</p>
+          <div key={index} className="bg-white p-8 rounded-2xl border border-orange-100 hover:border-primary transition duration-300 h-full shadow-xl group animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+            <h2 className="text-2xl font-bold mb-4 font-['MonumentExtended'] text-primary">{section.title}</h2>
+            <p className="text-black font-['NeueMontreal']">{section.description}</p>
           </div>
         ))}
       </div>

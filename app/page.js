@@ -11,7 +11,7 @@ import CTA from './components/CTA';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-400 via-black to-dark-500 text-white font-['NeueMontreal'] relative overflow-hidden">
+    <div className="min-h-screen font-['NeueMontreal'] relative overflow-hidden">
       <Hero />
       <OurPartners />
       <WhatWeDo />

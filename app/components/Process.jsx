@@ -2,14 +2,17 @@
 
 export default function Process() {
   return (
-    <section className="py-20 bg-background/90 rounded-3xl shadow-2xl border border-dark-100 container mx-auto px-6 my-20 animate-fade-in-up">
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended']">
+    <section className="relative py-20 bg-white rounded-3xl shadow-2xl border border-gray-200 container mx-auto px-6 my-20 animate-fade-in-up overflow-hidden"
+      style={{ boxShadow: '0 4px 32px 0 rgba(255, 102, 0, 0.08) inset, 0 2px 16px 0 rgba(0,0,0,0.04)' }}>
+      {/* Faint orange gradient at the top */}
+      <div className="pointer-events-none absolute left-0 top-0 w-full h-32 z-0" style={{background: 'linear-gradient(180deg, rgba(255,122,0,0.13) 0%, rgba(255,255,255,0) 100%)'}} />
+  <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center font-['MonumentExtended'] relative z-10">
         Our <span className="text-primary">Process</span>
       </h2>
-      <p className="text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto font-['NeueMontreal']">
+  <p className="text-xl text-black text-center mb-16 max-w-3xl mx-auto font-['NeueMontreal'] relative z-10">
         A streamlined approach to bring your ideas from concept to reality.
       </p>
-      <div className="relative flex flex-col items-center animate-fade-in-up">
+  <div className="relative flex flex-col items-center animate-fade-in-up z-10">
         <div
           className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full -translate-x-1/2 z-0"
           style={{ minHeight: "100%" }}
@@ -119,7 +122,7 @@ export default function Process() {
           >
             <div className="flex flex-col items-center mb-4">
               <div
-                className={`w-14 h-14 rounded-full bg-background/80 border-2 border-primary flex items-center justify-center shadow-lg mb-2 transition-all duration-300 group-hover:scale-110 group-focus:scale-110 group-hover:shadow-primary/30 group-focus:shadow-primary/30`}
+                className={`w-14 h-14 rounded-full bg-white border-2 border-primary flex items-center justify-center shadow-lg mb-2 transition-all duration-300 group-hover:scale-110 group-focus:scale-110 group-hover:shadow-primary/30 group-focus:shadow-primary/30`}
               >
                 {step.icon}
               </div>
@@ -127,11 +130,11 @@ export default function Process() {
                 {idx + 1}
               </span>
             </div>
-            <div className="w-full bg-background/80 border border-dark-100 rounded-2xl shadow-xl p-8 backdrop-blur-xl transition-all duration-300 group-hover:border-primary group-focus:border-primary group-hover:scale-[1.03] group-focus:scale-[1.03]">
+            <div className="w-full bg-white border border-gray-200 rounded-2xl shadow-xl p-8 backdrop-blur-xl transition-all duration-300 group-hover:border-primary group-focus:border-primary group-hover:scale-[1.03] group-focus:scale-[1.03]">
               <h3 className="text-xl font-bold mb-3 text-center group-hover:text-primary group-focus:text-primary transition duration-300 font-['MonumentExtended']">
                 {step.title}
               </h3>
-              <p className="text-gray-400 text-center font-['NeueMontreal']">
+              <p className="text-black text-center font-['NeueMontreal']">
                 {step.desc}
               </p>
             </div>
